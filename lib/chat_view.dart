@@ -1,8 +1,26 @@
 import 'package:chatesstatic/AppColors.dart';
+import 'package:chatesstatic/user.veiw.dart';
 import 'package:flutter/material.dart';
 
 class ChatView extends StatelessWidget {
-  const ChatView({super.key});
+   ChatView({super.key});
+
+
+
+  List<dynamic> users=[
+    UserModel(name: 'Ahmed hassan', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s' , lastmassege: 'Hi ', time: '9:48 pm'),
+    UserModel(name: 'trika', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s', lastmassege: 'هنخسر ان شاء الله', time:'5:48 pm'),
+    UserModel(name: 'mohamed', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s', lastmassege:'what ', time: '9:53 pm'),
+    UserModel(name: 'ali', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s', lastmassege: 'hello', time:'9:48 pm'),
+    UserModel(name: 'fadel', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s', lastmassege: 'that is ', time:'9:48 pm'),
+    UserModel(name: 'Khaled', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s', lastmassege: 'good', time: '9:48 pm'),
+  ];
+
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +54,7 @@ class ChatView extends StatelessWidget {
                               backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s'),
                             ),
                             SizedBox(height: 10,),
-                            Text('messi',style: TextStyle(color: AppColors.WhiteColor),),
+                            Text(users[index].name,style: TextStyle(color: AppColors.WhiteColor),),
                           ],
                         );
                       } ,
@@ -45,7 +63,7 @@ class ChatView extends StatelessWidget {
                          width: 10,
                        );
                       },
-                      itemCount: 10),
+                      itemCount: users.length),
                 ),
               ],
             ),
@@ -66,15 +84,15 @@ class ChatView extends StatelessWidget {
                           backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfZg45Q_GQPyh_dCrvWaqcGiYdKyY3UxoJSA1KsoDyw&s'),
                         ),
 
-                        title: Text('messi',style: TextStyle(fontWeight: FontWeight.bold),),
-                        subtitle: Text('لا عزاء لحمدون'),
-                        trailing: Text('10:00 pm'),
+                        title: Text(users[index].name,style: TextStyle(fontWeight: FontWeight.bold),),
+                        subtitle:Text(users[index]. lastmassege),
+                        trailing: Text(users[index].time),
                       );
                   },
                   separatorBuilder: (context, index) {
                     return Divider();
                   },
-                  itemCount: 10),
+                  itemCount: users.length),
             ),
           ),
         ],
